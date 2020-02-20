@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="container">
+      <view class="qingjia_type">
+    <text>身份类型</text>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+            <view class="benren">
+          <view>{{array[index]}}</view>
+          <image src="../../img/down.png" class="down_icon"></image>
+        </view>
+      </view>
+    </picker>
+  </view>
+
+  <view class="baka_content">
+    <view class="senqing_ren">
+      <view class="xxcj1">姓名</view>
+      <view>
+        <input class="xingming" auto-focus placeholder="请输入姓名" value='{{name}}' bindinput="bindKeyInput"/>
+      </view>
+    </view>
+    <view class="senqing_ren">
+      <view class="xxcj1">学号</view>
+      <view>
+        <input class="xingming" auto-focus placeholder="请输入学号" value='{{num}}' bindinput="bindKeyInput1"/>
+      </view>
+    </view>
+      <view class="senqing_ren">
+      <view class="xxcj1">身份证号</view>
+      <view>
+        <input class="xingming" auto-focus placeholder="请输入身份证号" value='{{name}}' bindinput="bindKeyInput"/>
+      </view>
+    </view>
+    <view class="senqing_ren">
+      <view class="xxcj1">手机号</view>
+      <view>
+        <input class="xingming" auto-focus placeholder="请输入手机号" value='{{num}}' bindinput="bindKeyInput1"/>
+      </view>
+    </view>
+</view>
+
+<!-- 时间 -->
+ <view class="baka_content">
+    <view class="qingjia_start">
+      <text>性别</text>
+   <picker class='time-picker' mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice1}}" class="qxz">请选择</text> 
+          <text hidden="{{choice2}}"> {{startDate}}
+  </text>
+      </view>
+      </picker>
+    </view>
+    <view class="baka_time">
+      <view>学院名称</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+    <view class="baka_time">
+      <view>专业</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+        <view class="baka_time">
+      <view>年级</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+        <view class="baka_time">
+      <view>班级</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+        <view class="baka_time">
+      <view>部门</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+        <view class="baka_time">
+      <view>学制</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+      <view class="baka_time">
+      <view>状态</view>
+      <picker class='time-picker' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}" style="margin-right:15px;">
+           <view class="picker">
+        <text hidden="{{choice3}}" class="qxz">请选择</text> 
+          <text hidden="{{choice4}}"> {{endDate}}</text>
+      </view>
+      </picker>
+    </view>
+
+    <view class="baka_time">
+      <view>入学年份</view>
+      <input class="weui-input" disabled bindinput="bindKeyInput" placeholder="小时" style="text-align:right;margin-right:15px;" value="{{hours}}小时" />
+    </view>
+  </view>
+
+ <button form-type="submit" class="tijao" bindtap="tijiao">确认提交 </button>
+</view>
