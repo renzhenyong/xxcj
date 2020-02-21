@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/gongmao/index",
-    "pages/logs/logs"
+          "pages/index/index",
+            "pages/gongmao/index",
+        "pages/success/index",
+          "pages/logs/logs"
   ],
 
   "window":{

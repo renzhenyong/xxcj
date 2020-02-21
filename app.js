@@ -34,6 +34,32 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    api: 'https://yingxin.chxgk.com/api/'
+  },
+  post: function (route, data, success, fail, complete) {
+    // data.token = this.globalData.sid;
+    wx.request({
+      url: this.globalData.api + route,
+      data: data,
+      method: 'POST',
+      success: res => {
+        console.log(res);
+        if (success)
+          success(res);
+      },
+      fail: err => {
+        console.log(err);
+        if (fail)
+          fail(err);
+      },
+      complete: function () {
+        if (!data.noload) {
+          wx.hideLoading();
+        }
+        if (complete)
+          complete();
+      },
+    })
   }
 })

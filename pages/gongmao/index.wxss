@@ -28,7 +28,6 @@
   width: 18px;
   height: 18px;
   align-self: center;
-  margin-right: 15px;
   margin-left: 5px;
 }
 .benren {
@@ -47,7 +46,7 @@ font-size:17px;
 justify-content: space-between
 }
 .xingming{
- line-height:44px;height:44px;text-align:center;
+ line-height:44px;height:44px;text-align:right;margin-right:16px;
 }
 .xxcj1{
   width:100px;

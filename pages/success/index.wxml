@@ -1,0 +1,13 @@
+
+<view>
+  <view style="margin:0 auto;text-align:center;margin-top:80px">
+    <view class="group">
+      <block>
+        <icon type="success" size="93" />
+      </block>
+    </view>
+    <view style="font-size:20px;color:#000000;margin-top:28px;">信息采集成功</view>
+    <view style="margin-top:23px;color:#888888">如需修改请在我的页面进行修改</view>
+  </view>
+</view>
+
