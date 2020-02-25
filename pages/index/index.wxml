@@ -1,82 +1,56 @@
-<!--index.wxml-->
 <view class="container">
-      <view class="qingjia_type">
+  <!-- 身份类型 -->
+  <view class="qingjia_type">
     <text>身份类型</text>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <picker bindchange="bindPickerChange" value="{{sfindex}}" range="{{senfens}}">
       <view class="picker">
-            <view class="benren">
-          <view>{{array[index]}}</view>
+        <view class="benren">
+          <view>{{senfens[sfindex]}}</view>
           <image src="../../img/down.png" class="down_icon"></image>
         </view>
       </view>
     </picker>
   </view>
-
+  <!-- 姓名学号 -->
   <view class="baka_content">
     <view class="senqing_ren">
       <view class="xxcj1">姓名</view>
       <view>
-        <input class="xingming" auto-focus placeholder="请输入姓名" value='{{name}}' bindinput="bindKeyInput"/>
+        <input class="xingming" auto-focus placeholder="请输入姓名" value='{{name}}' bindinput="bindKeyInput" />
       </view>
     </view>
-
     <view class="senqing_ren">
       <view class="xxcj1">{{xuehao}}</view>
       <view>
-        <input class="xingming" auto-focus placeholder="请输入工号" value='{{num}}' bindinput="bindKeyInput1"/>
+        <input class="xingming" auto-focus placeholder="请输入工号" value='{{number}}' bindinput="bindKeyInput1" />
       </view>
     </view>
-   
-       <view class="qingjia_start">
+    <view class="qingjia_start">
       <text>{{grada}}</text>
-   <picker   value="{{currentid}}" bindchange="bindPickerChange1"  data-selecthx="{{bjlist[id].bjname}}"  data-currentid="{{currentid}}"
-   range="{{bjlist}}" range-key="{{'bjname'}}" style="margin-right:15px;">
-           <view class="picker"> 
-        <text hidden="{{choice}}" class="qxz">请选择</text> 
-         <text hidden="{{choice1}}"> {{bjlist[bjid].bjname}}</text> 
-      </view>
+      <picker value="{{currentid}}" bindchange="bindPickerChange1" data-selecthx="{{bjlist[bjid].dept_name}}" data-currentid="{{currentid}}" range="{{bjlist}}" range-key="{{'dept_name'}}" style="margin-right:15px;">
+        <view class="picker">
+          <text hidden="{{choice}}" class="qxz">请选择</text>
+          <text hidden="{{choice1}}"> {{bjlist[bjid].dept_name}}</text>
+        </view>
       </picker>
     </view>
-
-<!-- 
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        <text hidden="{{choice}}" class="qxz">请选择</text> {{array[index]}}
+  </view>
+  <!-- 时间 -->
+  <view style="background:#fff;text-align:center;padding-top:15px;margin-top:16px;">
+    <view>请上传本人的自拍照</view>
+    <view style="justify-content:center;margin-top:15px;display:flex;">
+      <view style="width:102px;height:102px;line-height:102px;background:{{pic}};text-align:center" bindtap="brzp" hidden='{{scuan}}'>
+        <image src="../../img/yx17.png" style="width:24px;height:24px;"></image>
+        <view style="margin-top:-78px;font-size:12px">点此上传</view>
       </view>
-    </picker> -->
-
-         <!-- <view style="width:64px;margin-right:30px;">专业名称</view>    
-                   <picker bindchange="bindPickerChange" value="{{currentid}}" data-selecthx="{{zylist[zyid].dept_name}}"  data-currentid="{{currentid}}" range="{{zylist}}" range-key="{{'dept_name'}}">
-    <view class="picker">
-     {{zylist[zyid].dept_name}}
+      <image src="{{zppic}}" hidden='{{scuan1}}' bindtap="brzp" style="width:102px;height:102px;"></image>
     </view>
-  </picker> -->
-
-  
-</view>
-<!-- 时间 -->
-    <view style="background:#fff;text-align:center;padding:15px;margin-top:16px;">
-        <view >请上传学生老师本人的自拍照</view>
-            <view  style="justify-content:center;margin-top:15px;display:flex;">
-                 <view style="width:102px;height:102px;line-height:102px;background:{{pic}};text-align:center" bindtap="brzp" hidden='{{scuan}}'>
-                      <image src="../../img/yx17.png" style="width:24px;height:24px;"></image>
-                      <view style="margin-top:-78px;font-size:12px">点此上传</view>
-                 </view>
-
-     <!-- <image src="{{zppic}}" hidden='{{scuan1}}' bindtap="brzp" style="width:102px;height:102px;"></image> -->
-            </view>     
-
-            <view style="margin:30px;font-size:0.7rem;display:flex">
-            <text style="color:#FF6741">注意:</text> 
-            <view style="">
-                  <view>该照片将用于疫情大数据智能测温平台系统</view>
-                  <view>请上传老师近期免冠彩色照片，照片避免过</view>
-                  <view>度曝光或美颜。</view>
-            </view>
-                            </view>    
+    <view style="margin:20px;font-size:0.7rem;display:flex">
+      <text style="color:#FF6741;width:100px;">注意:</text>
+      <view class="zuyi">
+        该照片将用于疫情大数据智能测温平台系统,请上传本人近期免冠彩色照片，照片避免过度曝光或美颜。
       </view>
-
-
-    
- <button form-type="submit" class="tijao" bindtap="tijiao">确认提交 </button>
+    </view>
+  </view>
+  <button form-type="submit" class="tijao" bindtap="tijiao">确认提交</button>
 </view>

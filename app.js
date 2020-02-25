@@ -6,12 +6,6 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -21,7 +15,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -34,8 +27,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
-    api: 'https://yingxin.chxgk.com/api/'
+    api: 'https://twcl.chxgk.com/api/',
+    imgurl: 'https://twcl.chxgk.com/'
   },
   post: function (route, data, success, fail, complete) {
     // data.token = this.globalData.sid;
@@ -61,5 +54,6 @@ App({
           complete();
       },
     })
-  }
-})
+  },
+
+}) 
