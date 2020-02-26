@@ -48,10 +48,11 @@ Page({
   },
   // 身份类型
   bindPickerChange: function(e) {
+    // console.log("se.detail.value");
+    // console.log(e.detail.value);
     this.setData({
-      sfindex: e.detail.value
+      sfindex: Number(e.detail.value)
     })
-    console.log(e.detail.value);
     if (e.detail.value == 1) {
       this.setData({
         grada: "部门",
@@ -65,7 +66,16 @@ Page({
       })
       this.getGrade();
     }
-
+//切换身份，部门显示缓存
+    if (wx.getStorageSync('huancunsfindex') != this.data.sfindex){
+      this.setData({
+         bjid:0
+      })
+    }else{
+      this.setData({
+        bjid: wx.getStorageSync('huancunbjindex')
+      })  
+    }
   },
   // 班级下拉选
   bindPickerChange1: function(e) {
@@ -240,6 +250,7 @@ if(this.data.sfindex==0){
           scuan: true,
           scuan1: false,
         })
+        wx.setStorageSync('huancunbjindex', bjindex);
       } else {
         // wx.showModal({
         //   title: '提醒',
@@ -249,13 +260,15 @@ if(this.data.sfindex==0){
     });
   },
   subinfo() {
+    console.log(this.data.sfindex + 1);
+    console.log(typeof(this.data.sfindex + 1));
     app.post('xcx/subInfo', {
       sid: this.data.sid,
       name: this.data.name,
       number: this.data.number,
       depart_id: this.data.currentid,
       face_img: this.data.zppic,
-      type: this.data.sfindex + 1,
+      type: this.data.sfindex+1,
     }, res => {
       if (res.data.code == 1) {
         wx.navigateTo({
@@ -303,9 +316,11 @@ if(this.data.sfindex==0){
           this.getTeacgerPart();
         }
         this.getStuInfo();
+        wx.setStorageSync('huancunsfindex', res.data.type - 1);
         this.setData({
         sfindex :res.data.type-1,
         })
+      
       } else {
         wx.showModal({
           title: '提示',

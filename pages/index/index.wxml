@@ -22,7 +22,7 @@
     <view class="senqing_ren">
       <view class="xxcj1">{{xuehao}}</view>
       <view>
-        <input class="xingming" auto-focus placeholder="请输入工号" value='{{number}}' bindinput="bindKeyInput1" />
+        <input class="xingming" auto-focus placeholder="请输入学/工号" value='{{number}}' bindinput="bindKeyInput1" />
       </view>
     </view>
     <view class="qingjia_start">
