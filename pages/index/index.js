@@ -24,7 +24,6 @@ Page({
   //事件处理函数
 
   onShow: function () {
-  
   },
   onLoad: function (options) {
     // 登录
@@ -239,6 +238,7 @@ if(this.data.sfindex==0){
       if (res.data.code == 1) {
         let departid = res.data.data.depart_id;
         const bjindex = this.data.bjlist.findIndex(item => item.id == departid);
+        wx.setStorageSync('huancunbjindex', bjindex);
         this.setData({
         name:res.data.data.name,
         number: res.data.data.number,
@@ -250,7 +250,7 @@ if(this.data.sfindex==0){
           scuan: true,
           scuan1: false,
         })
-        wx.setStorageSync('huancunbjindex', bjindex);
+      
       } else {
         // wx.showModal({
         //   title: '提醒',
@@ -320,7 +320,7 @@ if(this.data.sfindex==0){
         this.setData({
         sfindex :res.data.type-1,
         })
-      
+       
       } else {
         wx.showModal({
           title: '提示',
