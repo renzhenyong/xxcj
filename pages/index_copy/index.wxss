@@ -1,0 +1,128 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.qingjia_type {
+  background: #fff;
+  height: 44px;
+  line-height: 44px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.qxz {
+  color: #9a999f;
+}
+.down_icon {
+  width: 18px;
+  height: 18px;
+  align-self: center;
+  margin-left: 5px;
+}
+.benren {
+  display: flex;
+}
+.baka_content{
+       background:#fff;
+       padding-left:16px;
+       margin-top:16px;
+}
+.senqing_ren{
+height:44px;line-height:44px;
+border-bottom:1px solid #E5E5E5;
+display:flex;
+font-size:17px;
+justify-content: space-between;
+}
+.xingming{
+ line-height:44px;height:44px;text-align:right;margin-right:16px;
+}
+.xxcj1{
+  width:100px;
+}
+.baka_content {
+  background: #fff;
+  padding-left: 16px;
+}
+.qingjia_start {
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+}
+.startpicker {
+  margin-right: 15px;
+}
+.qxz {
+  color: #9a999f;
+}
+.baka_time {
+  font-size: 17px;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.baka_time_icon {
+  width: 16px;
+  height: 16px;
+  background: #dcdcdc;
+  margin-right: 15px;
+}
+.sicang {
+  margin-right: 15px;
+  color: #9a999f;
+}
+.senqing_reason {
+  background: #fff;
+  display: flex;
+  padding-left: 15px;
+}
+.senqing_reason_text {
+  width: 80px;
+  font-size: 17px;
+}
+.senqing_reason_content {
+  font-size: 15px;
+  margin-top: 4px;
+}
+.tijiao_zaopian {
+  padding: 5px 15px;
+}
+.tijao {
+  margin: 30px 20px;
+  background: #126ffa;
+  color: #fff;
+}
+.qingjia_type {
+  background: #fff;
+  height: 44px;
+  line-height: 44px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.tijao {
+  margin: 20px 20px;
+  background: #126ffa;
+  color: #fff;
+}
+.zuyi{
+overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+  text-align: left;
+    -webkit-box-orient:vertical;
+}
